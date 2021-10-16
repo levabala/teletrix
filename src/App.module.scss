@@ -1,6 +1,15 @@
+@import "style/colors.scss";
+
 .App {
   width: 100vw;
   height: 100vh;
 
-  background: gray;
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+
+  .main {
+    flex-grow: 1;
+  }
 }
