@@ -1,29 +1,8 @@
 import type { Component } from "solid-js";
-
-import { cx } from "@emotion/css";
-
-import logo from "./logo.svg";
 import styles from "./App.module.scss";
 
 const App: Component = () => {
-  return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={cx(styles.logo, styles.amazing)} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
-    </div>
-  );
+  return <main class={styles.App} />;
 };
 
 export default App;
