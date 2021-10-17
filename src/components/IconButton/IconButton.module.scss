@@ -1,0 +1,46 @@
+@import "/src/styles/colors.scss";
+@import "/src/styles/transitions.scss";
+
+.IconButton {
+  background: none;
+  border-radius: 50%;
+
+  $padding: 0.5rem;
+  padding: $padding;
+  margin-left: -$padding;
+  margin-top: -$padding;
+
+  transition-duration: $transition-duration-short;
+  transition-property: background;
+  transition-timing-function: $transition-easing-easeInOut;
+
+  &:hover {
+    background: rgb(2 53 94 / 8%);
+  }
+
+  &:active {
+    background: rgb(0 0 0 / 8%);
+  }
+
+  @mixin applySize($size) {
+    width: $size + $padding * 2;
+    height: $size + $padding * 2;
+
+    > * {
+      width: $size;
+      height: $size;
+    }
+  }
+
+  &.small {
+    @include applySize(1rem);
+  }
+
+  &.medium {
+    @include applySize(1.5rem);
+  }
+
+  &.large {
+    @include applySize(2rem);
+  }
+}
