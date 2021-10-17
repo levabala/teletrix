@@ -3,6 +3,7 @@ import styles from "./App.module.scss";
 import { Header, IconButton } from "./components";
 
 import menuIcon from "./assets/icons/menu.svg";
+import { ChatList } from "./features";
 
 const App: Component = () => {
   return (
@@ -16,7 +17,9 @@ const App: Component = () => {
         }
         content={<span>Header</span>}
       />
-      <main class={styles.main} />
+      <main class={styles.main}>
+        <ChatList />
+      </main>
     </div>
   );
 };
