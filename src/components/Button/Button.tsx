@@ -1,4 +1,4 @@
-import { Component, createEffect, JSX } from "solid-js";
+import { Component, JSX } from "solid-js";
 import { mergeClasses } from "../../utils/solid";
 import styles from "./Button.module.scss";
 
@@ -8,8 +8,6 @@ export type ButtonProps = JSX.ButtonHTMLAttributes<HTMLButtonElement>;
 // TODO: add hover/active
 export const Button: Component<ButtonProps> = (props) => {
   const { classList } = mergeClasses(props);
-
-  createEffect(() => console.log(classList));
 
   return (
     <button
