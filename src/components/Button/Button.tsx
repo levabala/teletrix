@@ -1,15 +1,23 @@
-import { cx } from "@emotion/css";
-import { Component, JSX, splitProps } from "solid-js";
+import { Component, createEffect, JSX } from "solid-js";
+import { mergeClasses } from "../../utils/solid";
 import styles from "./Button.module.scss";
 
-type ButtonProps = JSX.ButtonHTMLAttributes<HTMLButtonElement>;
+export type ButtonProps = JSX.ButtonHTMLAttributes<HTMLButtonElement>;
 
 // TODO: add variants
 // TODO: add hover/active
 export const Button: Component<ButtonProps> = (props) => {
-  const [local, propsOther] = splitProps(props, ["class"]);
+  const { classList } = mergeClasses(props);
+
+  createEffect(() => console.log(classList));
 
   return (
-    <button {...propsOther} class={cx(styles.Button, local.class)} /> // children prop is passed as well
+    <button
+      classList={{
+        [styles.Button]: true,
+        ...classList,
+      }}
+      {...props}
+    /> // children prop is passed as well
   );
 };
