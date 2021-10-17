@@ -11,7 +11,7 @@ interface IconButtonProps extends ButtonProps {
 }
 
 export const IconButton: Component<IconButtonProps> = (propsRaw) => {
-  // TODO: remove force cast for mergeProps (need custom typings?)
+  // TODO: #16 remove force cast for mergeProps (need custom typings?)
   const props = mergeProps({ size: Size.Medium }, propsRaw) as IconButtonProps;
   const [local, propsOther] = splitProps(props, ["icon", "size"]);
   const { classList } = mergeClasses(props);
@@ -21,11 +21,11 @@ export const IconButton: Component<IconButtonProps> = (propsRaw) => {
       {...propsOther}
       classList={{
         [styles.IconButton]: true,
-        // TODO: move sizes mapping to utils
+        // TODO: #17 move sizes mapping to utils
         [styles.small]: local.size === Size.Small,
         [styles.medium]: local.size === Size.Medium,
         [styles.large]: local.size === Size.Large,
-        // TODO: add more convenient way to merge and forward class/className/classList
+        // TODO: #18 add more convenient way to merge and forward class/className/classList
         ...classList,
       }}
     >
