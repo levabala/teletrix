@@ -1,27 +1,21 @@
 import type { Component } from "solid-js";
-
-import { cx } from "@emotion/css";
-
-import logo from "./logo.svg";
 import styles from "./App.module.scss";
+import { Header, Button } from "./components";
+
+import menuIcon from "./assets/icons/menu.svg";
 
 const App: Component = () => {
   return (
     <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={cx(styles.logo, styles.amazing)} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+      <Header
+        actionLeft={
+          <Button onClick={() => console.log("kek")}>
+            <img src={menuIcon} alt="menu icon" />
+          </Button>
+        }
+        content={<span>Header</span>}
+      />
+      <main class={styles.main} />
     </div>
   );
 };
