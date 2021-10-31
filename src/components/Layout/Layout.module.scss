@@ -1,15 +1,16 @@
 @import "/src/styles/colors.scss";
 
-.App {
-  width: 100vw;
-  height: 100vh;
-
-  background: white;
-
+.Layout {
   display: flex;
   flex-direction: column;
 
-  .main {
+  height: 100%;
+
+  .header {
+  }
+
+  .content {
+    overflow: auto;
     flex-grow: 1;
   }
 }
