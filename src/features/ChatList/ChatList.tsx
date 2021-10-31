@@ -34,13 +34,14 @@ export const ChatList: Component = () => {
           lastMessageText="Lol, lul?"
           lastMessageDate={sub(new Date(), { minutes: 10 })}
         />
-        <For each={times(10, () => null)}>
-          {() => (
+        <For each={times(10, (n) => n)}>
+          {(n) => (
             <ChatItem
               contactName="Ilya"
               lastMessageStatus="viewed"
-              lastMessageText="Wow, waw?"
+              lastMessageText={`Wow, waw? ${n}`}
               lastMessageDate={sub(new Date(), { days: 1 })}
+              isLast={n === 9}
             />
           )}
         </For>
