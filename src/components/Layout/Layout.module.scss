@@ -1,0 +1,16 @@
+@import "/src/styles/colors.scss";
+
+.Layout {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  .header {
+  }
+
+  .content {
+    overflow: auto;
+    flex-grow: 1;
+  }
+}
